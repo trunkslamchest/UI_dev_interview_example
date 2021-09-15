@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgba(150, 150, 150, 1);
+  color: rgba(255, 255, 255, 1) !important;
+  -webkit-box-shadow: 0 0 0px 100px #FFF inset;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input:-webkit-autofill:disabled,
+textarea:-webkit-autofill:disabled,
+select:-webkit-autofill:disabled {
+  border: 0px solid rgba(150, 150, 150, 1);
+  cursor: not-allowed;
+  -webkit-text-fill-color: rgba(255, 255, 255, 1) !important;
+  -webkit-box-shadow: 0 0 0px 100px rgba(150, 150, 150, 1) inset;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input:-webkit-autofill:disabled:hover,
+textarea:-webkit-autofill:disabled:hover,
+select:-webkit-autofill:disabled:hover {
+  border: 0px solid rgba(150, 150, 150, 1);
+  cursor: not-allowed;
+  -webkit-text-fill-color: rgba(255, 255, 255, 1) !important;
+  -webkit-box-shadow: 0 0 0px 100px rgba(150, 150, 150, 1) inset;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.mainContainer {
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  color: black;
 }

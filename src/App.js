@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import { connect } from 'react-redux'
+
+import HeaderContainer from './components/header/headerContainer'
+import FormContainer from './components/form/formContainer'
+import ProfileContainer from './components/profile/profileContainer'
+
+import './App.css'
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <HeaderContainer />
+      <div className="mainContainer">
+        { props.isLoggedIn ? <ProfileContainer /> : <FormContainer /> }
+      </div>
+    </>
+  )
 }
 
-export default App;
+const store = store => {
+  return {
+    isLoggedIn: store.user.isLoggedIn
+  }
+}
+
+export default connect(store)(App)
